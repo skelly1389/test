@@ -7,7 +7,6 @@ var testUrl = 'https://www.mapquestapi.com/search/v4/place?location=-74.95590458
   fetch(testUrl, {
   method: 'GET', //GET is the default.
   credentials: 'same-origin', // include, *same-origin, omit
-  mode: 'cors',
   redirect: 'follow', // manual, *follow, error
 })
   .then(function (response) {
