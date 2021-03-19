@@ -11,7 +11,7 @@ var testUrl = 'https://www.mapquestapi.com/search/v4/place?location=-74.95590458
 })
   .then(function (response) {
       console.log(response);
-    return response.json;
+    return response;
   })
   .then(function (data) {
     console.log(data);
