@@ -33,6 +33,7 @@ function getParks(lon, lat){
     for(i=0;i<data.results.length;i++){
       console.log('park name: ' + data.results[i].name);
       //can use this link in an iframe if we want or a redirect link if that doesn't work out
+      console.log('test');
       console.log('iframe src: https://www.mapquest.com/' + data.results[i].slug);
     }
   })
