@@ -23,11 +23,12 @@ function getLocation(){
 
 //searches for 5 parks near coords, sorts by relevance for now because the filter is a query and not built in
 function getParks(lon, lat){
-  fetch('https://www.mapquestapi.com/search/v4/place?location=' + lon + '%2C' + lat +'&sort=relevance&feedback=false&key=9UthBdDGZK1MsiEFy48XWw3fWtC01AAJ&pageSize=5&q=parks')
+  fetch('https://www.mapquestapi.com/search/v4/place?location=' + lon + '%2C' + lat +'&sort=relevance&feedback=false&key=9UthBdDGZK1MsiEFy48XWw3fWtC01AAJ&pageSize=5&q=national%parks')
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
+    //can sort through the return data if you want, doesn't look like much comes back
     console.log(data);
     //console logging info to make it easier to figure out what we'll want printed to the page
     for(i=0;i<data.results.length;i++){
