@@ -12,7 +12,6 @@ function getLocation(){
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     var userLon = data.results[0].locations[0].latLng.lng;
     var userLat = data.results[0].locations[0].latLng.lat;
     getParks(userLon, userLat)
@@ -26,7 +25,7 @@ function getParks(lon, lat){
   })
   .then(function (data) {
     console.log(data);
-    for(i=0;i<6;i++){
+    for(i=0;i<5;i++){
       console.log('park name: ' + data.results[i].name);
     }
   })
