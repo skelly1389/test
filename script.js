@@ -19,11 +19,27 @@ function getLocation(){
   })
   }
 
+function getParks(){
+  fetch('https://www.mapquestapi.com/search/v4/place?location=' + lon + '%2C' + lat +'&sort=relevance&feedback=false&key=9UthBdDGZK1MsiEFy48XWw3fWtC01AAJ&pageSize=5&q=parks')
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    for(i=0;i<6;i++){
+      console.log('park name: ' + data.results[i].name);
+    }
+  })
+  }
+
 function getParks(lon, lat){
   console.log('test');
   fetch('https://www.mapquestapi.com/search/v4/place?location=' + lon + '%2C' + lat +'&sort=relevance&feedback=false&key=9UthBdDGZK1MsiEFy48XWw3fWtC01AAJ&pageSize=5&q=parks')
   .then(response => response.json())
   .then(json => console.log(json))
+  for(i=0;i<6;i++){
+    console.log('park name: ' + );
+  }
 }
 
 getLocation();
