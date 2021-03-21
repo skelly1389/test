@@ -47,7 +47,7 @@ function getLocation(){
   }
   
 function getWeather(loc){
-  fetch("https://api.weatherbit.io/v2.0/current?" + loc + "&key=b5c97ec4269348f59f7363c259205e69" )
+  fetch("https://api.weatherbit.io/v2.0/current?&city=" + loc + "&key=b5c97ec4269348f59f7363c259205e69" )
   .then(function (response) {
       return response.json();
   })
@@ -74,6 +74,6 @@ function getParks(lon, lat){
   })
   }
 
-//can set up an event listener for click, just running on page load to test
+
  
 searchButton.addEventListener('click', getLocation); 
