@@ -72,11 +72,22 @@ function getParks(lon, lat){
       console.log('park name: ' + data.results[i].name);
       //can use this link in an iframe if we want or a redirect link if that doesn't work out
       console.log('iframe src: https://www.mapquest.com/' + data.results[i].slug);
+      // prints the park names to a test div
       var pName = data.results[i].name;
       var pNameHead = document.createElement('h4');
+      //ADD BULMA AND STYLING CLASSES HERE
+      pNameHead.classList.add('');
       var text = document.createTextNode(pName);
       pNameHead.appendChild(text);
       parksDisplay.appendChild(pNameHead);
+
+      var pSlug = data.results[i].slug;
+      var pSlugFrame = document.createElement('iframe');
+      //ADD STYLES TO IFRAME HERE
+      pSlugFrame.setAttribute("src", ('https://www.mapquest.com/' + pSlug))
+      //ADD BULMA AND STYLING CLASSES HERE
+      pSlugFrame.classList.add('');
+      parksDisplay.appendChild(pSlugFrame);
     }
   })
   }
