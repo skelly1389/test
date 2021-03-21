@@ -42,12 +42,12 @@ function getLocation(){
     var userLat = data.results[0].locations[0].latLng.lat;
     //plugs the coords into mapquest search places api
     getParks(userLon, userLat)
-    getWeather(testLocation)
+    getWeather(userLon, userLat)
   })
   }
   
-function getWeather(loc){
-  fetch("https://api.weatherbit.io/v2.0/current?&city=" + loc + "&key=b5c97ec4269348f59f7363c259205e69" )
+function getWeather(lon, lat){
+  fetch("https://api.weatherbit.io/v2.0/current?&lat=" + lat + '&lon=' + lon + "&key=b5c97ec4269348f59f7363c259205e69")
   .then(function (response) {
       return response.json();
   })
