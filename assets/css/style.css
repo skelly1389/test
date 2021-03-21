@@ -1,0 +1,39 @@
+:root {
+    --darker-blue: #144E76; 
+    --grey-blue: #3A85BF;
+    --sky-blue: #0089F2;
+    --teal: #8FE0FE;
+    --green: #669277;
+
+} 
+
+html {
+    height:100%;
+}
+
+.bodyBackground {
+    height: 100%;
+    width: 100%;
+    background-color: #f8ef42;
+    background-image: linear-gradient(315deg, #f8ef42 0%, #0fd64f 74%);
+    background-attachment: fixed;
+    
+
+}
+
+.logo {
+    position:absolute;
+    top:0;
+    right:1000;
+}
+
+.subtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    
+}
+
+.title{
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 60px;
+}
