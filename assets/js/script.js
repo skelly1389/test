@@ -76,7 +76,7 @@ function getParks(lon, lat){
       var pName = data.results[i].name;
       var pNameHead = document.createElement('h4');
       //ADD BULMA AND STYLING CLASSES HERE
-      pNameHead.classList.add('');
+      // pNameHead.classList.add('');
       var text = document.createTextNode(pName);
       pNameHead.appendChild(text);
       parksDisplay.appendChild(pNameHead);
@@ -86,7 +86,7 @@ function getParks(lon, lat){
       //ADD STYLES TO IFRAME HERE
       pSlugFrame.setAttribute("src", ('https://www.mapquest.com/' + pSlug))
       //ADD BULMA AND STYLING CLASSES HERE
-      pSlugFrame.classList.add('');
+      // pSlugFrame.classList.add('');
       parksDisplay.appendChild(pSlugFrame);
     }
   })
