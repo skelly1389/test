@@ -1,29 +1,20 @@
-console.log("Hello World")
-fetch("https://api.weatherbit.io/v2.0/current?lat=39.949482&lon=-75.171883&key=b5c97ec4269348f59f7363c259205e69")
-//, {
-    // method: 'GET', //GET is the default.
-    // credentials: 'same-origin', // include, *same-origin, omit
-    // redirect: 'follow', // manual, *follow, error
-  // }
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data.data[0]);
-    // loop over data to get Temp, Wind, Humidity, UVindex
-    // for loop
-    for(var i = 0; i < data.data.length; i++){
-        console.log(data.data[i].wind_spd)
-        console.log(data.data[i].temp);
-        console.log(data.data[i].rh)
-        console.log(data.data[i].precip)
-        console.log(data.data[i].uv)
-    }
-    })
 
-
-
-
+// fetch("https://api.weatherbit.io/v2.0/current?lat=39.949482&lon=-75.171883&key=b5c97ec4269348f59f7363c259205e69")
+    // .then(function (response) {
+    //   return response.json();
+    // })
+    // .then(function (data) {
+    //   console.log(data.data[0]);
+    // // loop over data to get Temp, Wind, Humidity, UVindex
+    // // for loop
+    // for(var i = 0; i < data.data.length; i++){
+    //     console.log(data.data[i].wind_spd)
+    //     console.log(data.data[i].temp);
+    //     console.log(data.data[i].rh)
+    //     console.log(data.data[i].precip)
+    //     console.log(data.data[i].uv)
+    // }
+    // })
 
 // known working api urls for testing functions
 var testSearchUrl = 'https://www.mapquestapi.com/search/v4/place?location=-74.95590458465354%2C40.26624146333869&sort=relevance&feedback=false&key=9UthBdDGZK1MsiEFy48XWw3fWtC01AAJ&pageSize=5&q=parks'
@@ -51,28 +42,21 @@ function getLocation(){
     var userLat = data.results[0].locations[0].latLng.lat;
     //plugs the coords into mapquest search places api
     getParks(userLon, userLat)
-    getWeather(userLon, userLat, testLocation)
+    getWeather(testLocation)
   })
   }
   
-
-  function getWeather(lon,lat,loc){
-    fetch("https://api.weatherbit.io/v2.0/current?" + loc + "&key=b5c97ec4269348f59f7363c259205e69" )
-    .then(function (response) {
+function getWeather(loc){
+  fetch("https://api.weatherbit.io/v2.0/current?" + loc + "&key=b5c97ec4269348f59f7363c259205e69" )
+  .then(function (response) {
       return response.json();
-    })
-    .then(function (data) {
-    // getWeather(userLon, userLat)
-    document.getElementById("weather-card").appendChild(data.data[0].temp);
-
-
+  })
+  .then(function (data) {
+    console.log(data);
     })
   }
 
-  
-
-
-//searches for 5 parks near coords, sorts by relevance for now because the filter is a query and not super specific
+  //searches for 5 parks near coords, sorts by relevance for now because the filter is a query and not super specific
 function getParks(lon, lat){
   fetch('https://www.mapquestapi.com/search/v4/place?location=' + lon + '%2C' + lat +'&sort=relevance&feedback=false&key=9UthBdDGZK1MsiEFy48XWw3fWtC01AAJ&pageSize=5&q=parks')
   .then(function (response) {
