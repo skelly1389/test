@@ -28,7 +28,7 @@ var searchButton = document.querySelector("#search-button");
 function getLocation(){
   console.log(testInput.value)
   var testLocation = testInput.value.replace(/\s+/g, '');
-  fetch('https://www.mapquestapi.com/geocoding/v1/address?key=mtbhj6FHUDK65jhm5YNhCClvB7GI52JS&location=' + testLocation)
+  fetch('https://www.mapquestapi.com/geocoding/v1/address?key=mtbhj6FHUDK65jhm5YNhCClvB7GI52JS&maxResults=1&location=' + testLocation)
   .then(function (response) {
     return response.json();
   })
@@ -47,7 +47,7 @@ function getLocation(){
   }
   
 function getWeather(lon, lat){
-  fetch("https://api.weatherbit.io/v2.0/current?&lat=" + lat + '&lon=' + lon + "&key=b5c97ec4269348f59f7363c259205e69")
+  fetch("https://api.weatherbit.io/v2.0/current?&lat=" + lat + '&lon=' + lon + "&units=I&key=b5c97ec4269348f59f7363c259205e69")
   .then(function (response) {
       return response.json();
   })
