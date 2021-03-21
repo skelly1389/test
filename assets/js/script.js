@@ -92,6 +92,4 @@ function getParks(lon, lat){
   })
   }
 
-
- 
 searchButton.addEventListener('click', getLocation); 
