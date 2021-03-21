@@ -33,7 +33,7 @@ function getLocation(){
     return response.json();
   })
   .then(function (data) {
-    if(data.results[0].locations.length === 0){
+    if(data.results[0].locations.length !== 1){
       alert('enter a city name');
       location.reload();
     }
